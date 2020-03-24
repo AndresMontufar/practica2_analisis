@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {User} from '../../models/user';
 import {users} from '../../mocks/mock-users';
-import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +35,7 @@ export class LoginService {
   }
 
   register(email: string, password: string, rol: string){
+    this.usuarios = users;
     this.usuarios.push({email, password, rol});
     alert('Usuario registrado');
   }

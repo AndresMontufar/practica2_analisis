@@ -16,9 +16,14 @@ export class Tab2Page {
     password: ''
   };
 
+  confirmPassword: string;
+
   registerUser(){
-    this.loginService.register(this.user.email, this.user.password, 'usuario');
-    this.user.email = '';
-    this.user.password = '';
+    if(this.confirmPassword === this.user.password){
+      this.loginService.register(this.user.email, this.user.password, 'usuario');
+      this.user.email = '';
+      this.user.password = '';
+    }
+    else alert('No coinciden las contraseñas');
   }
 }

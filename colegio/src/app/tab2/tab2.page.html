@@ -13,15 +13,15 @@
     <ion-card-content>
       <ion-item>
         <ion-icon name="person" slot="start"></ion-icon>
-        <ion-input placeholder="Nombre" type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="person" slot="start"></ion-icon>
         <ion-input placeholder="Usuario" type="text" [(ngModel)]="user.email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-icon name="person" slot="start"></ion-icon>
-        <ion-input placeholder="Password" type="password" [(ngModel)]="user.password"></ion-input>
+        <ion-icon name="key" slot="start"></ion-icon>
+        <ion-input placeholder="Contraseña" type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="key" slot="start"></ion-icon>
+        <ion-input placeholder="Confirmar Contraseña" type="password" [(ngModel)]="confirmPassword"></ion-input>
       </ion-item>
       <ion-button expand="block" fill="outline" (click)="registerUser()">Registrar</ion-button>
     </ion-card-content>

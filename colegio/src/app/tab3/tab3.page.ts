@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {User} from '../models/user';
-import {LoginService} from "../services/login/login.service";
+import {LoginService} from '../services/login/login.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -15,9 +16,7 @@ export class Tab3Page {
     password: ''
   };
 
-  constructor(
-      private loginService: LoginService
-  ) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   login() {
     this.loginService.login(this.user.email, this.user.password);
@@ -26,6 +25,6 @@ export class Tab3Page {
   }
 
   registerModal() {
-
+    this.router.navigate([`/tabs/tab2`]);
   }
 }
