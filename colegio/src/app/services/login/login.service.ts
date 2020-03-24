@@ -34,4 +34,9 @@ export class LoginService {
       alert('Credenciales incorrectas');
     }
   }
+
+  register(email: string, password: string, rol: string){
+    this.usuarios.push({email, password, rol});
+    alert('Usuario registrado');
+  }
 }
