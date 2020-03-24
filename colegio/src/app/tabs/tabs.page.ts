@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LoginService} from '../services/login/login.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +8,13 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor(private loginService: LoginService) {}
 
+
+  logout() {
+    localStorage.removeItem('user');
+    this.loginService.isLoggedIn = false;
+    alert('Ha cerrado sesion');
+
+  }
 }

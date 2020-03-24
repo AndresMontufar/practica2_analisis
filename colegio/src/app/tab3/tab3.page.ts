@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {User} from '../models/user';
+import {LoginService} from "../services/login/login.service";
 
 @Component({
   selector: 'app-tab3',
@@ -8,14 +9,20 @@ import {User} from '../models/user';
 })
 export class Tab3Page {
 
+
   user: User = {
     email: '',
     password: ''
   };
-  constructor() {}
+
+  constructor(
+      private loginService: LoginService
+  ) {}
 
   login() {
-    console.log(this.user);
+    this.loginService.login(this.user.email, this.user.password);
+    this.user.email = '';
+    this.user.password = '';
   }
 
   registerModal() {

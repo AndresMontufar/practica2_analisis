@@ -11,10 +11,16 @@
       <ion-label>Tab 2</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="tab3">
+    <ion-tab-button tab="tab3" *ngIf="!loginService.isLoggedIn">
       <ion-icon name="log-in"></ion-icon>
       <ion-label>Login</ion-label>
     </ion-tab-button>
+
+    <ion-tab-button (click)="logout()"  *ngIf="loginService.isLoggedIn">
+      <ion-icon name="log-out"></ion-icon>
+      <ion-label>logout</ion-label>
+    </ion-tab-button>
+
   </ion-tab-bar>
 
 </ion-tabs>
