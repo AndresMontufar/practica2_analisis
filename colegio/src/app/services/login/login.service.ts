@@ -16,11 +16,13 @@ export class LoginService {
   // @ts-ignore
   login(email: string, password: string):any {
     this.usuarios = users;
-
+    let rol = '';
 
     this.usuarios.forEach(function(value) {
       if (email === value.email && password === value.password) {
         localStorage.setItem('user', JSON.stringify(value));
+        rol = value.rol;
+
       } else{
       }
       // console.log(value);
@@ -28,10 +30,11 @@ export class LoginService {
 
     if(localStorage.getItem('user')!= null){
       this.isLoggedIn = true;
-      alert('logueado');
+      return rol;
 
     }else {
-      alert('Credenciales incorrectas');
+      return '';
     }
+
   }
 }
