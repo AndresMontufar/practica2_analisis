@@ -8,7 +8,7 @@ import {LoginService} from '../services/login/login.service';
 })
 export class TabsPage {
 
-  constructor(private loginService: LoginService) {}
+  constructor(public loginService: LoginService) {}
 
 
   logout() {

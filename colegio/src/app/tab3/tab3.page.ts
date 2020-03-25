@@ -17,9 +17,9 @@ export class Tab3Page {
     password: ''
   };
   constructor(
-      private loginService: LoginService,
+      public loginService: LoginService,
       public toastController: ToastController,
-      private route: Router
+      public route: Router
   ) {}
 
   login() {

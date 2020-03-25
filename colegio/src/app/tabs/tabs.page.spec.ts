@@ -1,7 +1,8 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 
 import { TabsPage } from './tabs.page';
+import {throwError} from 'rxjs';
 
 describe('TabsPage', () => {
   let component: TabsPage;
@@ -22,5 +23,14 @@ describe('TabsPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('When user is logout', () =>{
+    it('should handle error', fakeAsync(() =>{
+      //spyOn(component.loginService, 'isLoggedIn').and.returnValue(throwError({error: 'error'}));
+      component.logout();
+      tick(50);
+      expect(component.loginService.isLoggedIn).toBeFalsy();
+    }));
   });
 });
