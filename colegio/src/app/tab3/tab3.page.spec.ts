@@ -3,6 +3,8 @@ import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab3Page } from './tab3.page';
+import {FormsModule} from '@angular/forms';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('Tab3Page', () => {
   let component: Tab3Page;
@@ -11,7 +13,7 @@ describe('Tab3Page', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Tab3Page],
-      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
+      imports: [IonicModule.forRoot(), ExploreContainerComponentModule, FormsModule, RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(Tab3Page);
