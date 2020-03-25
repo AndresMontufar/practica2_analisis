@@ -25,7 +25,7 @@ describe('LoginService', () => {
       const service: LoginService = TestBed.get(LoginService);
       //spyOn(service, 'login').and.returnValue(throwError({error: 'error'}));
       service.login('hola1adf2@gmail.com', 'hola12');
-      tick(500);
+      tick(50);
       expect(service.login).toBeDefined();
     }));
   });

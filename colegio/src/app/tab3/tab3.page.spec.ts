@@ -48,7 +48,7 @@ describe('Tab3Page', () => {
       component.user.rol = 'administrador';
       component.user.password = 'admin'
       component.login();
-      tick(500);
+      tick(50);
       expect(component.route.navigated).toBeTruthy();
     }));
   });
@@ -56,7 +56,7 @@ describe('Tab3Page', () => {
   describe('When register() is called', () =>{
     it('should handle error', fakeAsync(() =>{
       component.registerModal();
-      tick(500);
+      tick(50);
       expect(component.route.navigated).toBeTruthy();
     }));
   });
@@ -68,7 +68,7 @@ describe('Tab3Page', () => {
       component.user.rol = 'catedratico';
       component.user.password = 'eQWWzLeQKB'
       component.login();
-      tick(500);
+      tick(50);
       expect(component.route.navigated).toBeTruthy();
     }));
   });
@@ -79,7 +79,7 @@ describe('Tab3Page', () => {
       component.user.rol = 'usuario';
       component.user.password = 'nQ1KfK'
       component.login();
-      tick(500);
+      tick(50);
       expect(component.route.navigated).toBeTruthy();
     }));
   });

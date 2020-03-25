@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
@@ -23,5 +23,28 @@ describe('Tab2Page', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('When user registered correctly', () =>{
+    it('should handle error', fakeAsync(() =>{
+      //spyOn(component.loginService, 'login').and.returnValue(throwError({error: 'error'}));
+      component.user.email = 'choggetts0@dot.gov';
+      component.user.password = 'eQWWzLeQKB'
+      component.confirmPassword = 'eQWWzLeQKB'
+      component.registerUser();
+      tick(50);
+      expect(true).toBeTruthy();
+    }));
+  });
+
+  describe('User credentials incorrectly', () =>{
+    it('should handle error', () =>{
+      //spyOn(component.loginService, 'login').and.returnValue(throwError({error: 'error'}));
+      component.user.email = 'dasf@dot.gov';
+      component.user.password = 'eQWWzLeQKB'
+      component.confirmPassword = 'hola'
+      component.registerUser();
+      expect(true).toBeTruthy();
+    });
   });
 });
